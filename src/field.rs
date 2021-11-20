@@ -46,20 +46,16 @@ pub fn save_block_to_field(
 
 // Returns the number of cleared rows
 pub fn clear_full_rows(field: &mut [i32; (FIELD_HEIGHT * FIELD_WIDTH) as usize]) -> u32 {
-    println!("Check Field");
     // Ignore bottom line as it acts as a border
     for y in 1..(FIELD_HEIGHT - 1) {
-        println!("Check row: {}", y);
         let mut is_row_full = true;
         for x in 1..(FIELD_WIDTH - 1) {
             if field[(x * FIELD_HEIGHT + y) as usize] == 0 {
                 is_row_full = false;
-                println!("Row {} empty block at {}", y, x);
                 break;
             }
         }
         if is_row_full {
-            println!("Row {} full", y);
             // Move all rows one down
             for shift_y in y..(FIELD_HEIGHT - 2) {
                 for shift_x in 1..(FIELD_WIDTH - 1) {
