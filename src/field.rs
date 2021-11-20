@@ -1,5 +1,4 @@
-use crate::block::{create_stones, Block};
-use crate::stone::Shape;
+use crate::block::{create_stones, Block, Shape};
 
 pub const FIELD_WIDTH: u32 = 12;
 pub const FIELD_HEIGHT: u32 = 23;

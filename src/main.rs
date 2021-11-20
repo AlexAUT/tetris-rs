@@ -1,7 +1,6 @@
 mod block;
 mod field;
 mod rendering;
-mod stone;
 
 extern crate sdl2;
 
