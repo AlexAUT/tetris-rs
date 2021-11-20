@@ -1,11 +1,14 @@
-mod stone;
 mod block;
 mod field;
 mod rendering;
+mod stone;
 
 extern crate sdl2;
 
-use field::{clear_full_rows, create_new_random_block, is_block_colliding, save_block_to_field, BLOCK_SIZE, FIELD_HEIGHT, FIELD_PADDING_X, FIELD_PADDING_Y, FIELD_WIDTH};
+use field::{
+    clear_full_rows, create_new_random_block, is_block_colliding, save_block_to_field, BLOCK_SIZE,
+    FIELD_HEIGHT, FIELD_PADDING_X, FIELD_PADDING_Y, FIELD_WIDTH,
+};
 use rendering::{draw_blocks, draw_grid};
 
 use std::time::{Duration, Instant};

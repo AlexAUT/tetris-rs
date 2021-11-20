@@ -1,6 +1,6 @@
-use rand::Rng;
 use rand::distributions::Standard;
 use rand::prelude::Distribution;
+use rand::Rng;
 
 pub struct Stone {
     pub local_x: i32,
@@ -17,8 +17,7 @@ pub enum Shape {
     Z,
 }
 
-impl Distribution<Shape> for Standard
-{
+impl Distribution<Shape> for Standard {
     fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> Shape {
         match rng.gen_range(0..=6) {
             0 => Shape::I,
@@ -31,4 +30,3 @@ impl Distribution<Shape> for Standard
         }
     }
 }
-

@@ -1,4 +1,4 @@
-use crate::block::{Block, create_stones};
+use crate::block::{create_stones, Block};
 use crate::stone::Shape;
 
 pub const FIELD_WIDTH: u32 = 12;
@@ -20,7 +20,10 @@ pub fn create_new_block(shape: Shape) -> Block {
     }
 }
 
-pub fn is_block_colliding(block: &Block, field: &[i32; (FIELD_HEIGHT * FIELD_WIDTH) as usize]) -> bool {
+pub fn is_block_colliding(
+    block: &Block,
+    field: &[i32; (FIELD_HEIGHT * FIELD_WIDTH) as usize],
+) -> bool {
     for stone in block.stones.iter() {
         let x: i32 = stone.local_x + block.x;
         let y: i32 = stone.local_y + block.y;
@@ -31,7 +34,10 @@ pub fn is_block_colliding(block: &Block, field: &[i32; (FIELD_HEIGHT * FIELD_WID
     false
 }
 
-pub fn save_block_to_field(block: &Block, field: &mut [i32; (FIELD_HEIGHT * FIELD_WIDTH) as usize]) {
+pub fn save_block_to_field(
+    block: &Block,
+    field: &mut [i32; (FIELD_HEIGHT * FIELD_WIDTH) as usize],
+) {
     for stone in block.stones.iter() {
         let x: i32 = stone.local_x + block.x;
         let y: i32 = stone.local_y + block.y;
@@ -58,7 +64,8 @@ pub fn clear_full_rows(field: &mut [i32; (FIELD_HEIGHT * FIELD_WIDTH) as usize])
             // Move all rows one down
             for shift_y in y..(FIELD_HEIGHT - 2) {
                 for shift_x in 1..(FIELD_WIDTH - 1) {
-                    field[(shift_x * FIELD_HEIGHT + shift_y) as usize] =  field[(shift_x * FIELD_HEIGHT + (shift_y + 1)) as usize];
+                    field[(shift_x * FIELD_HEIGHT + shift_y) as usize] =
+                        field[(shift_x * FIELD_HEIGHT + (shift_y + 1)) as usize];
                 }
             }
             // Clear first row

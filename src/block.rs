@@ -1,11 +1,10 @@
-use crate::stone::{Stone, Shape};
+use crate::stone::{Shape, Stone};
 
 pub struct Block {
     pub x: i32,
     pub y: i32,
     pub stones: [Stone; 4],
 }
-
 
 pub fn create_stones(shape: Shape) -> [Stone; 4] {
     match shape {

@@ -1,7 +1,13 @@
-use sdl2::{pixels::Color, rect::{Point, Rect}, render::WindowCanvas};
+use sdl2::{
+    pixels::Color,
+    rect::{Point, Rect},
+    render::WindowCanvas,
+};
 
-use crate::{block::Block, field::{BLOCK_SIZE, FIELD_HEIGHT, FIELD_PADDING_X, FIELD_PADDING_Y, FIELD_WIDTH}};
-
+use crate::{
+    block::Block,
+    field::{BLOCK_SIZE, FIELD_HEIGHT, FIELD_PADDING_X, FIELD_PADDING_Y, FIELD_WIDTH},
+};
 
 pub fn draw_blocks(
     canvas: &mut WindowCanvas,
